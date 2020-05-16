@@ -21,7 +21,7 @@ import {
     useParams
 } from "react-router-dom";
 import Snackbar from '@material-ui/core/Snackbar';
-import { FacebookShareButton, FacebookIcon } from 'react-share';
+import { FacebookProvider, ShareButton } from 'react-facebook';
 import './lib/getHTMLMediaElement.css';
 
 const keygen = require("keygenerator");
@@ -394,17 +394,16 @@ function Home() {
                     justifyContent: 'center',
                     alignItems: "center"
                 }}>
-                    <h3 style={{
+                    {/* <h3 style={{
 
                         marginRight: 10
-                    }}>Share: </h3>
-                    <FacebookShareButton
-                        url={`/home#${key}`}
-                        quote="Facebook"
-                        className="Demo__some-network__share-button"
-                    >
-                        <FacebookIcon size={32} round />
-                    </FacebookShareButton>
+                    }}>Share: </h3> */}
+
+                    <FacebookProvider appId="184647419395707">
+                        <ShareButton href={`${window.location.hostname}/home#${key}`}>
+                            Facebook Share
+        </ShareButton>
+                    </FacebookProvider>
                 </div>
             </Route>
 
