@@ -113,8 +113,8 @@ function Home() {
 
             event.mediaElement.removeAttribute('src');
             event.mediaElement.removeAttribute('srcObject');
-            event.mediaElement.muted = true;
-            event.mediaElement.volume = 0;
+            // event.mediaElement.muted = true;
+            // event.mediaElement.volume = 0;
 
             var video = document.createElement('video');
 
@@ -126,14 +126,14 @@ function Home() {
                 video.setAttribute('playsinline', true);
             }
 
-            if (event.type === 'local') {
-                video.volume = 0;
-                try {
-                    video.setAttributeNode(document.createAttribute('muted'));
-                } catch (e) {
-                    video.setAttribute('muted', true);
-                }
-            }
+            // if (event.type === 'local') {
+            //     video.volume = 0;
+            //     try {
+            //         video.setAttributeNode(document.createAttribute('muted'));
+            //     } catch (e) {
+            //         video.setAttribute('muted', true);
+            //     }
+            // }
             video.srcObject = event.stream;
 
             var width = window.innerWidth - 80;
