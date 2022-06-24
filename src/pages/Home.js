@@ -54,7 +54,7 @@ function Home() {
 
     const [transition, setTransition] = React.useState(undefined);
 
-    const refCreateStreaming = useRef(null);
+    const refCreateStreaming = useRef("");
 
     var connection = new RTCMultiConnection();
 
